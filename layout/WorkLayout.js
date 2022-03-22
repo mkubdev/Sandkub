@@ -29,7 +29,7 @@ function classNames(...classes) {
 
 function GlassNavbar({ title }) {
   return (
-    <nav className="border border-slate-800 py-6 bg-white/80 backdrop-blur-sm fixed top-0 z-50 w-full">
+    <nav className="h-12 border-b-0 border-gray-100 bg-white/40 backdrop-blur-sm fixed top-0 z-50 w-full">
       <div className="mx-auto"></div>
     </nav>
     
