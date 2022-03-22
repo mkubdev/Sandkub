@@ -1,13 +1,8 @@
 import {
   CalendarIcon,
-  HomeIcon,
-  MapIcon,
-  MenuIcon,
-  SearchCircleIcon,
-  SpeakerphoneIcon,
-  UserGroupIcon,
-  XIcon,
+  HomeIcon
 } from "@heroicons/react/outline";
+import { useRouter } from "next/router";
 
 const navigation = [
     { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
@@ -15,6 +10,8 @@ const navigation = [
   ];
 
 const NavDesktop = () => {
+  const router = useRouter();
+
   return (
     <>
       <nav className="mt-5 flex-1" aria-label="Sidebar">
@@ -24,7 +21,7 @@ const NavDesktop = () => {
               key={item.name}
               href={item.href}
               className={classNames(
-                item.current
+                router.route == item.href
                   ? "bg-gray-200 text-gray-900"
                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
                 "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -32,33 +29,7 @@ const NavDesktop = () => {
             >
               <item.icon
                 className={classNames(
-                  item.current
-                    ? "text-gray-500"
-                    : "text-gray-400 group-hover:text-gray-500",
-                  "mr-3 h-6 w-6"
-                )}
-                aria-hidden="true"
-              />
-              {item.name}
-            </a>
-          ))}
-          <div className="flex items-center flex-shrink-0 px-4">
-            <span className="font">Me</span>
-          </div>
-          {navigation2.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={classNames(
-                item.current
-                  ? "bg-gray-200 text-gray-900"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-              )}
-            >
-              <item.icon
-                className={classNames(
-                  item.current
+                  router.route == item.href
                     ? "text-gray-500"
                     : "text-gray-400 group-hover:text-gray-500",
                   "mr-3 h-6 w-6"

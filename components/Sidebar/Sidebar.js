@@ -4,6 +4,7 @@ import {
   NewspaperIcon,
 } from "@heroicons/react/outline";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const navigation = [
   { name: "Home", href: "/", icon: HomeIcon, current: true },
@@ -12,7 +13,7 @@ const navigation = [
 ];
 
 const me = [
-  { name: "Github", href: "#", icon: ExternalLinkIcon, current: false },
+  { name: "Github", href: "https://github.com/mkubdev", icon: ExternalLinkIcon, current: false },
   { name: "Linkedin", href: "#", icon: ExternalLinkIcon, current: false },
 ];
 
@@ -28,7 +29,34 @@ function SidebarSeparator({ title }) {
   );
 }
 
+function LinkItem({ item }) {
+  return (
+    <a
+      href={item.href}
+      className={classNames(
+        item.current
+          ? "bg-gray-200 text-gray-900"
+          : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+        "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+      )}
+    >
+      <item.icon
+        className={classNames(
+          item.current
+            ? "text-gray-500"
+            : "text-gray-400 group-hover:text-gray-500",
+          "mr-3 h-6 w-6"
+        )}
+        aria-hidden="true"
+      />
+      {item.name}
+    </a>
+  );
+}
+
 const Sidebar = () => {
+  const router = useRouter();
+
   return (
     <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
       <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
@@ -36,9 +64,12 @@ const Sidebar = () => {
           <img
             className="h-8 w-auto"
             src="https://img.icons8.com/stickers/100/000000/palm-tree.png"
-            alt="Workflow"
+            alt="Sandkub"
           />
-          <span className="mx-1 font-semibold">Sandkub</span>
+          <span 
+            class="mx-1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500"
+          >Sandkub</span>
+          
         </div>
         <nav className="mt-5 flex-1" aria-label="Sidebar">
           <div className="px-2 space-y-1">
@@ -46,7 +77,7 @@ const Sidebar = () => {
               <Link key={item.name} href={item.href}>
                 <a
                   className={classNames(
-                    item.current
+                    router.route == item.href
                       ? "bg-gray-200 text-gray-900"
                       : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
                     "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -54,7 +85,7 @@ const Sidebar = () => {
                 >
                   <item.icon
                     className={classNames(
-                      item.current
+                      router.route == item.href
                         ? "text-gray-500"
                         : "text-gray-400 group-hover:text-gray-500",
                       "mr-3 h-6 w-6"
@@ -68,27 +99,7 @@ const Sidebar = () => {
             <SidebarSeparator title="Me" />
 
             {me.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={classNames(
-                  item.current
-                    ? "bg-gray-200 text-gray-900"
-                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                  "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                )}
-              >
-                <item.icon
-                  className={classNames(
-                    item.current
-                      ? "text-gray-500"
-                      : "text-gray-400 group-hover:text-gray-500",
-                    "mr-3 h-6 w-6"
-                  )}
-                  aria-hidden="true"
-                />
-                {item.name}
-              </a>
+              <LinkItem key={item.name} item={item} />
             ))}
           </div>
         </nav>
