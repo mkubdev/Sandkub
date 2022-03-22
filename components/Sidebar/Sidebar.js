@@ -67,7 +67,7 @@ const Sidebar = () => {
             alt="Sandkub"
           />
           <span 
-            class="mx-1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500"
+            className="mx-1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500"
           >Sandkub</span>
           
         </div>
