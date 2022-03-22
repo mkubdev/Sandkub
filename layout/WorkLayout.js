@@ -27,6 +27,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+function GlassNavbar({ title }) {
+  return (
+    <nav className="py-6 bg-white/80 backdrop-blur-sm fixed top-0 z-50 w-full">
+      <div className="mx-auto"></div>
+    </nav>
+  )
+}
+
 export default function WorkLayout({children}) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
@@ -166,6 +174,7 @@ export default function WorkLayout({children}) {
             </div>
           </div>
           <div className="flex-1 relative z-0 overflow-y-auto">
+            <GlassNavbar/>
             { children }         
           </div>
         </div>
