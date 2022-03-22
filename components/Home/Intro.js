@@ -71,15 +71,15 @@ export default function Intro() {
       <div className="relative px-4 sm:px-6 lg:px-16">
         <div className="text-lg max-w-prose mx-auto">
           <h1>
-            <span className="block text-base text-center text-amber-600 font-semibold tracking-wide uppercase">
-              Hello
+            <span className="block text-base text-center text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 font-semibold tracking-wide uppercase">
+              Welcome to Sandkub
             </span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Hi there!
+              Hi there !
             </span>
           </h1>
-          <p className="mt-8 text-xl text-gray-500 leading-8">
-            Hello, i&apos;m Maxime Kubik, <strong>musician, builder, and software engineer</strong> based in Lyon, France.
+          <p className="mt-8 text-md text-gray-500 leading-8 lg:text-xl">
+            Hey, i&apos;m Maxime Kubik, <strong>musician, builder, and software engineer</strong> based in Lyon, France.
             I&apos;m currently buildings industrial webapps at <strong>TFT Labs.</strong> 🎩
           </p>
         </div>
@@ -103,6 +103,22 @@ export default function Intro() {
             />
             <figcaption>22/03/2022 - David Bowie</figcaption>
           </figure>
+
+          <button
+   
+        className="flex items-center px-3 py-2 mt-8 text-sm font-medium text-white transition transform bg-black rounded-full backface-visibility-hidden active:bg-opacity-40 hover:scale-105 hover:bg-opacity-30 focus:outline-none bg-opacity-20"
+      >
+        <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5 opacity-70">
+          <path
+            d="M14.9497 14.9498C12.2161 17.6835 7.78392 17.6835 5.05025 14.9498C2.31658 12.2162 2.31658 7.784 5.05025 5.05033C7.78392 2.31666 12.2161 2.31666 14.9497 5.05033C15.5333 5.63385 15.9922 6.29475 16.3266 7M16.9497 2L17 7H16.3266M12 7L16.3266 7"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+        </svg>
+
+        <span className="ml-3">Click to transition</span>
+      </button>
+
         </div>
       </div>
     </div>
