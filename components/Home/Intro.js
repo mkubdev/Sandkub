@@ -79,8 +79,8 @@ export default function Intro() {
             </span>
           </h1>
           <p className="mt-8 text-xl text-gray-500 leading-8">
-            Hello, i'm Maxime Kubik, <strong>musician, builder, and software engineer</strong> based in Lyon, France.
-            I'm currently buildings industrial webapps at <strong>TFT Labs.</strong> 🎩
+            Hello, i&apos;m Maxime Kubik, <strong>musician, builder, and software engineer</strong> based in Lyon, France.
+            I&apos;m currently buildings industrial webapps at <strong>TFT Labs.</strong> 🎩
           </p>
         </div>
         <div className="mt-6 prose prose-amber prose-lg text-gray-500 mx-auto">
@@ -91,7 +91,7 @@ export default function Intro() {
             </p>
           </blockquote>
           <p>
-            This is the first version of my website. I'm currently working on it, but it's not finished yet. I'll be adding more features soon.
+            This is the first version of my website. I&apos;m currently working on it, but it&apos;s not finished yet. I&apos;ll be adding more features soon.
           </p>
           <figure>
             <img
