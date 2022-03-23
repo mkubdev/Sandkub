@@ -175,7 +175,7 @@ export default function WorkLayout({children}) {
             </div>
           </div>
           <div className="flex-1 relative z-0 overflow-y-auto">
-            <GlassNavbar/>
+            {/* <GlassNavbar/> */}
             { children }         
           </div>
         </div>
