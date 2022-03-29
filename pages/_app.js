@@ -1,9 +1,14 @@
 import "../styles/globals.css";
+import WorkLayout from "../layout/WorkLayout";
 
 function MyApp({ Component, pageProps }) {
+  
   // Add: Provider - ErrorToast - Layout
-  // Rq: Layout break tailwind here!
-  return <Component {...pageProps} />;
+  return (
+    <WorkLayout>
+      <Component {...pageProps} />
+    </WorkLayout>
+  );
 }
 
 export default MyApp;
