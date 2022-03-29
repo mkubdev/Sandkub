@@ -1,4 +1,5 @@
 import {
+  CubeIcon,
   ExternalLinkIcon,
   HomeIcon,
   NewspaperIcon,
@@ -7,14 +8,15 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const navigation = [
-  { name: "Home", href: "/", icon: HomeIcon, current: true },
-  { name: "Blog", href: "/blog", icon: NewspaperIcon, current: false },
-  // { name: "Call me", href: "/callme", icon: CalendarIcon, current: false },
+  { name: "Home", href: "/", icon: HomeIcon },
+  { name: "Blog", href: "/blog", icon: NewspaperIcon },
+  { name: "Three.js", href: "/threejs", icon: CubeIcon },
+  // { name: "Call me", href: "/callme", icon: CalendarIcon },
 ];
 
 const me = [
-  { name: "Github", href: "https://github.com/mkubdev", icon: ExternalLinkIcon, current: false },
-  { name: "Linkedin", href: "#", icon: ExternalLinkIcon, current: false },
+  { name: "Github", href: "https://github.com/mkubdev", icon: ExternalLinkIcon },
+  { name: "Linkedin", href: "#", icon: ExternalLinkIcon },
 ];
 
 function classNames(...classes) {
