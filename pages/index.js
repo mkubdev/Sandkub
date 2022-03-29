@@ -5,8 +5,6 @@ import WorkLayout from "../layout/WorkLayout";
 export default function Home({children}) {
 
   return ( 
-      <WorkLayout>
         <Intro />
-      </WorkLayout>
   )
 }
