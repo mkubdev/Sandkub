@@ -14,7 +14,9 @@ const navigation = [
 
 const me = [
   { name: "Github", href: "https://github.com/mkubdev", icon: ExternalLinkIcon, current: false },
-  { name: "Linkedin", href: "#", icon: ExternalLinkIcon, current: false },
+  { name: "Linkedin", href: "https://www.linkedin.com/in/maximekbk/", icon: ExternalLinkIcon, current: false },
+  { name: "Dev.to", href: "https://dev.to/mkubdev", icon: ExternalLinkIcon, current: false },
+
 ];
 
 function classNames(...classes) {
