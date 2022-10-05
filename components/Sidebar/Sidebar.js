@@ -1,26 +1,42 @@
 import {
+  CogIcon,
   ExternalLinkIcon,
   HomeIcon,
   NewspaperIcon,
-} from "@heroicons/react/outline";
-import Link from "next/link";
-import { useRouter } from "next/router";
+} from '@heroicons/react/outline';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const navigation = [
-  { name: "Home", href: "/", icon: HomeIcon, current: true },
-  { name: "Blog", href: "/blog", icon: NewspaperIcon, current: false },
+  { name: 'Home', href: '/', icon: HomeIcon, current: true },
+  { name: 'Blog', href: '/blog', icon: NewspaperIcon, current: false },
+  { name: 'EddieHub API', href: '/eddie-api', icon: CogIcon, current: false },
   // { name: "Call me", href: "/callme", icon: CalendarIcon, current: false },
 ];
 
 const me = [
-  { name: "Github", href: "https://github.com/mkubdev", icon: ExternalLinkIcon, current: false },
-  { name: "Linkedin", href: "https://www.linkedin.com/in/maximekbk/", icon: ExternalLinkIcon, current: false },
-  { name: "Dev.to", href: "https://dev.to/mkubdev", icon: ExternalLinkIcon, current: false },
-
+  {
+    name: 'Github',
+    href: 'https://github.com/mkubdev',
+    icon: ExternalLinkIcon,
+    current: false,
+  },
+  {
+    name: 'Linkedin',
+    href: 'https://www.linkedin.com/in/maximekbk/',
+    icon: ExternalLinkIcon,
+    current: false,
+  },
+  {
+    name: 'Dev.to',
+    href: 'https://dev.to/mkubdev',
+    icon: ExternalLinkIcon,
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 function SidebarSeparator({ title }) {
@@ -37,17 +53,17 @@ function LinkItem({ item }) {
       href={item.href}
       className={classNames(
         item.current
-          ? "bg-gray-200 text-gray-900"
-          : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-        "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+          ? 'bg-gray-200 text-gray-900'
+          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+        'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
       )}
     >
       <item.icon
         className={classNames(
           item.current
-            ? "text-gray-500"
-            : "text-gray-400 group-hover:text-gray-500",
-          "mr-3 h-6 w-6"
+            ? 'text-gray-500'
+            : 'text-gray-400 group-hover:text-gray-500',
+          'mr-3 h-6 w-6'
         )}
         aria-hidden="true"
       />
@@ -60,37 +76,36 @@ const Sidebar = () => {
   const router = useRouter();
 
   return (
-    <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
-      <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+    <div className="flex flex-col flex-1 min-h-0 bg-gray-100 border-r border-gray-200">
+      <div className="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
         <div className="flex items-center flex-shrink-0 px-4">
           <img
-            className="h-8 w-auto"
+            className="w-auto h-8"
             src="https://img.icons8.com/stickers/100/000000/palm-tree.png"
             alt="Sandkub"
           />
-          <span 
-            className="mx-1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500"
-          >Sandkub</span>
-          
+          <span className="mx-1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
+            Sandkub
+          </span>
         </div>
-        <nav className="mt-5 flex-1" aria-label="Sidebar">
+        <nav className="flex-1 mt-5" aria-label="Sidebar">
           <div className="px-2 space-y-1">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href}>
                 <a
                   className={classNames(
                     router.route == item.href
-                      ? "bg-gray-200 text-gray-900"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                      ? 'bg-gray-200 text-gray-900'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                    'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                   )}
                 >
                   <item.icon
                     className={classNames(
                       router.route == item.href
-                        ? "text-gray-500"
-                        : "text-gray-400 group-hover:text-gray-500",
-                      "mr-3 h-6 w-6"
+                        ? 'text-gray-500'
+                        : 'text-gray-400 group-hover:text-gray-500',
+                      'mr-3 h-6 w-6'
                     )}
                     aria-hidden="true"
                   />
@@ -106,12 +121,12 @@ const Sidebar = () => {
           </div>
         </nav>
       </div>
-      <div className="flex-shrink-0 flex border-t border-gray-200 px-3 py-2">
-        <a href="#" className="flex-shrink-0 w-full group block">
+      <div className="flex flex-shrink-0 px-3 py-2 border-t border-gray-200">
+        <a href="#" className="flex-shrink-0 block w-full group">
           <div className="flex items-center">
             <div>
               <img
-                className="inline-block h-7 w-7 rounded-full"
+                className="inline-block rounded-full h-7 w-7"
                 src="https://images.unsplash.com/photo-1517423738875-5ce310acd3da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=770&q=80"
                 alt=""
               />
