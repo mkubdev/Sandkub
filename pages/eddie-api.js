@@ -1,12 +1,16 @@
+import WorkLayout from '../layout/WorkLayout';
+
 const eddieApi = (props) => {
   return (
-    <div className="flex flex-wrap w-full m-4 mx-auto">
-      <ul>
-        {props.data.map((project) => (
-          <li key={project._id}> {JSON.stringify(project)} </li>
-        ))}
-      </ul>
-    </div>
+    <WorkLayout>
+      <div className="flex flex-wrap w-full p-4 m-4 mx-auto">
+        <ul>
+          {props.data.map((project) => (
+            <li key={project._id}> {JSON.stringify(project)} </li>
+          ))}
+        </ul>
+      </div>
+    </WorkLayout>
   );
 };
 
